@@ -4,173 +4,126 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#145da0" />
-  <title>온수학 학원관리</title>
+  <title>억매방 영어학원 관리</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
       <div class="brand">
-        <div class="brand-mark"><span>온</span></div>
-        <div><strong>온수학</strong><small>학원관리</small></div>
+        <div class="brand-mark"><span>억</span></div>
+        <div><strong>억매방</strong><small>영어학원 관리</small></div>
       </div>
-
       <nav class="main-nav" aria-label="주요 메뉴">
-        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">⌂</span><span>홈</span></button>
-        <button class="nav-item" data-page="daily"><span class="nav-icon">✓</span><span>오늘 수업</span><b class="nav-count">4</b></button>
-        <button class="nav-item" data-page="students"><span class="nav-icon">♙</span><span>원생 관리</span></button>
-        <button class="nav-item" data-page="homework"><span class="nav-icon">▤</span><span>숙제·출석</span></button>
-        <button class="nav-item" data-page="billing"><span class="nav-icon">₩</span><span>수납 관리</span></button>
-        <button class="nav-item" data-page="makeup"><span class="nav-icon">↻</span><span>보강 관리</span><b class="nav-count orange">3</b></button>
-        <button class="nav-item" data-page="reports"><span class="nav-icon">↗</span><span>통계·보고서</span></button>
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">⌂</span><span>대시보드</span></button>
+        <button class="nav-item" data-page="students"><span class="nav-icon">♙</span><span>학생 관리</span></button>
+        <button class="nav-item" data-page="attendance"><span class="nav-icon">✓</span><span>출결 관리</span></button>
+        <button class="nav-item" data-page="learning"><span class="nav-icon">A</span><span>영어 학습 관리</span></button>
+        <button class="nav-item" data-page="counseling"><span class="nav-icon">✉</span><span>상담 및 알림</span></button>
+        <button class="nav-item" data-page="reports"><span class="nav-icon">✦</span><span>AI 학습보고서</span></button>
       </nav>
-
-      <div class="sidebar-tip">
-        <img src="onsuhak-logo.jpg" alt="온수학 로고" />
-        <p>수학을 밝히는 힘</p>
-      </div>
+      <div class="sidebar-tip"><div class="brand-mark"><span>영</span></div><p>작은 성장을<br />매일 기록해요</p></div>
       <button class="nav-item settings" data-page="settings"><span class="nav-icon">⚙</span><span>학원 설정</span></button>
     </aside>
 
     <main class="main-area">
       <header class="topbar">
         <button class="mobile-menu" id="mobileMenu" aria-label="메뉴 열기">☰</button>
-        <div class="page-heading"><p id="pageEyebrow">2026년 7월 5일 일요일</p><h1 id="pageTitle">안녕하세요, 원장님!</h1></div>
+        <div class="page-heading"><p id="pageEyebrow">초등 1~6학년 영어 학습 현황</p><h1 id="pageTitle">안녕하세요, 원장님!</h1></div>
         <div class="top-actions">
-          <div class="global-search"><span>⌕</span><input id="globalSearch" type="search" placeholder="원생 이름 검색" /></div>
-          <button class="icon-button notification" aria-label="알림">♢<b>3</b></button>
-          <div class="profile"><div class="avatar">원</div><div><strong>온수학 원장</strong><small>관리자</small></div></div>
+          <div class="global-search"><span>⌕</span><input id="globalSearch" type="search" placeholder="학생 이름 검색" /></div>
+          <div class="profile"><div class="avatar">억</div><div><strong>억매방 원장</strong><small>관리자</small></div></div>
         </div>
       </header>
 
       <div class="content">
-        <section class="page active" id="dashboard-page" data-title="안녕하세요, 원장님!" data-eyebrow="2026년 7월 5일 일요일">
+        <section class="page active" id="dashboard-page">
           <div class="welcome-banner">
-            <div><span class="mini-label">TODAY</span><h2>오늘도 아이들의<br /><em>수학 자신감</em>을 밝혀주세요.</h2><p>수업 4개 · 원생 18명 · 확인할 업무 7건</p><button class="primary-button" data-go="daily">오늘 수업 기록하기 <span>→</span></button></div>
-            <div class="bulb-art" aria-hidden="true"><div class="rays">✦</div><div class="bulb">!</div><div class="book">⌣</div></div>
+            <div><span class="mini-label">EOKMAEBANG ENGLISH</span><h2>오늘도 아이들의<br /><em>영어 자신감</em>을 키워주세요</h2><p>초등 1~6학년 · 예시 학생 30명 · 영어 전문 관리</p><button class="primary-button" data-go="attendance">오늘 출결 기록하기 <span>→</span></button></div>
+            <div class="bulb-art" aria-hidden="true"><div class="rays">ABC</div><div class="bulb">!</div><div class="book">BOOK</div></div>
           </div>
-
           <div class="stats-grid">
-            <article class="stat-card"><div class="stat-icon blue">♙</div><div><p>전체 원생</p><strong id="totalStudentCount">45<small>명</small></strong><span class="up">↑ 3명</span></div></article>
-            <article class="stat-card"><div class="stat-icon green">✓</div><div><p>오늘 출석</p><strong>14<small>/18명</small></strong><span>출석률 78%</span></div></article>
-            <article class="stat-card"><div class="stat-icon orange">▤</div><div><p>숙제 미제출</p><strong>5<small>명</small></strong><span class="warn">확인 필요</span></div></article>
-            <article class="stat-card"><div class="stat-icon red">₩</div><div><p>7월 미납</p><strong>3<small>명</small></strong><span class="warn">420,000원</span></div></article>
+            <article class="stat-card"><div class="stat-icon blue">♙</div><div><p>전체 학생</p><strong id="totalStudentCount">30<small>명</small></strong><span>예시 데이터</span></div></article>
+            <article class="stat-card"><div class="stat-icon green">✓</div><div><p>오늘 출석</p><strong>27<small>/30명</small></strong><span class="up">출석률 90%</span></div></article>
+            <article class="stat-card"><div class="stat-icon orange">W</div><div><p>이번 주 단어</p><strong>86<small>점</small></strong><span class="up">지난주보다 4점 상승</span></div></article>
+            <article class="stat-card"><div class="stat-icon purple">✦</div><div><p>보고서 준비</p><strong>6<small>명</small></strong><span>작성 대기</span></div></article>
           </div>
-
           <div class="dashboard-grid">
             <article class="panel schedule-panel">
-              <div class="panel-head"><div><span class="section-kicker">TODAY'S CLASS</span><h3>오늘 수업 일정</h3></div><button class="text-button" data-go="daily">전체보기 →</button></div>
+              <div class="panel-head"><div><span class="section-kicker">TODAY'S CLASS</span><h3>오늘 영어 수업</h3></div><button class="text-button" data-go="learning">전체보기 →</button></div>
               <div class="timeline">
-                <div class="time-row done"><time>14:00</time><div class="timeline-line"><i></i></div><div class="class-info"><div><strong>초등 4학년 A반</strong><p>기본+응용 · 5명</p></div><span class="badge gray">수업 완료</span></div></div>
-                <div class="time-row current"><time>16:00</time><div class="timeline-line"><i></i></div><div class="class-info"><div><strong>초등 6학년 심화반</strong><p>최상위 · 4명</p></div><span class="badge blue">곧 시작</span></div></div>
-                <div class="time-row"><time>18:00</time><div class="timeline-line"><i></i></div><div class="class-info"><div><strong>중등 2학년 A반</strong><p>개념원리 · 5명</p></div><span class="badge outline">예정</span></div></div>
-                <div class="time-row"><time>20:00</time><div class="timeline-line"><i></i></div><div class="class-info"><div><strong>중등 3학년 내신반</strong><p>학교별 내신 · 4명</p></div><span class="badge outline">예정</span></div></div>
+                <div class="time-row done"><time>14:00</time><div class="timeline-line"><i></i></div><div class="class-info"><div><strong>초등 1·2학년 Starter</strong><p>Phonics · 6명</p></div><span class="badge gray">수업 완료</span></div></div>
+                <div class="time-row current"><time>16:00</time><div class="timeline-line"><i></i></div><div class="class-info"><div><strong>초등 3·4학년 Grow</strong><p>Reading · 10명</p></div><span class="badge blue">곧 시작</span></div></div>
+                <div class="time-row"><time>18:00</time><div class="timeline-line"><i></i></div><div class="class-info"><div><strong>초등 5·6학년 Jump</strong><p>Speaking · 14명</p></div><span class="badge outline">예정</span></div></div>
               </div>
             </article>
-
             <article class="panel todo-panel">
-              <div class="panel-head"><div><span class="section-kicker orange-text">TO DO</span><h3>확인이 필요해요</h3></div><span class="count-chip">7건</span></div>
-              <button class="todo-item" data-go="homework"><span class="todo-icon orange">!</span><div><strong>숙제 미제출</strong><p>김도윤 외 4명</p></div><b>5</b><span>›</span></button>
-              <button class="todo-item" data-go="makeup"><span class="todo-icon blue">↻</span><div><strong>보강 일정 미정</strong><p>이서아 외 1명</p></div><b>2</b><span>›</span></button>
-              <button class="todo-item" data-go="billing"><span class="todo-icon red">₩</span><div><strong>7월 수강료 미납</strong><p>박지후 외 2명</p></div><b>3</b><span>›</span></button>
-              <button class="todo-item" data-go="students"><span class="todo-icon purple">♙</span><div><strong>상담 기록 확인</strong><p>최근 태도 변화 학생</p></div><b>1</b><span>›</span></button>
+              <div class="panel-head"><div><span class="section-kicker orange-text">TO DO</span><h3>확인이 필요해요</h3></div><span class="count-chip">4건</span></div>
+              <button class="todo-item" data-go="attendance"><span class="todo-icon orange">!</span><div><strong>결석 사유 확인</strong><p>오늘 결석 학생</p></div><b>3</b><span>›</span></button>
+              <button class="todo-item" data-go="learning"><span class="todo-icon blue">W</span><div><strong>단어 재시험</strong><p>70점 미만 학생</p></div><b>4</b><span>›</span></button>
+              <button class="todo-item" data-go="counseling"><span class="todo-icon purple">✉</span><div><strong>학부모 상담</strong><p>이번 주 예약</p></div><b>2</b><span>›</span></button>
+              <button class="todo-item" data-go="reports"><span class="todo-icon green">✦</span><div><strong>월간 보고서</strong><p>생성 대기</p></div><b>6</b><span>›</span></button>
             </article>
           </div>
-
-          <article class="panel quick-panel">
-            <div class="panel-head"><div><span class="section-kicker">QUICK ACTION</span><h3>자주 쓰는 기능</h3></div></div>
-            <div class="quick-actions">
-              <button data-go="students" data-action="add"><span class="quick-icon blue">＋</span><strong>새 원생 등록</strong><small>학생 정보를 추가해요</small></button>
-              <button data-go="daily"><span class="quick-icon orange">✓</span><strong>수업 기록</strong><small>출석·숙제·진도 입력</small></button>
-              <button data-go="billing"><span class="quick-icon green">₩</span><strong>수납 처리</strong><small>수강료 납부를 기록해요</small></button>
-              <button data-go="reports"><span class="quick-icon purple">↗</span><strong>월간 보고서</strong><small>학습 현황을 확인해요</small></button>
-            </div>
-          </article>
         </section>
 
-        <section class="page" id="daily-page" data-title="오늘 수업" data-eyebrow="출석부터 진도까지 한 번에 기록하세요">
+        <section class="page" id="students-page">
           <div class="page-toolbar">
-            <div class="date-control"><button>‹</button><strong>2026. 07. 05 (일)</strong><button>›</button></div>
-            <div class="toolbar-actions"><button class="secondary-button">지난 기록 불러오기</button><button class="primary-button" id="saveClass">수업 기록 저장</button></div>
+            <div class="filter-group"><div class="search-box">⌕<input id="studentSearch" placeholder="이름 또는 학교 검색" /></div><select id="gradeFilter"><option value="all">전체 학년</option><option>초등 1학년</option><option>초등 2학년</option><option>초등 3학년</option><option>초등 4학년</option><option>초등 5학년</option><option>초등 6학년</option></select></div>
           </div>
-          <div class="class-tabs" id="classTabs">
-            <button class="active" data-class="elementary6"><span>16:00</span><strong>초6 심화반</strong></button>
-            <button data-class="middle2"><span>18:00</span><strong>중2 A반</strong></button>
-            <button data-class="middle3"><span>20:00</span><strong>중3 내신반</strong></button>
-          </div>
-          <article class="panel record-panel">
-            <div class="panel-head record-head"><div><span class="section-kicker">16:00–17:30</span><h3 id="recordClassTitle">초등 6학년 심화반</h3><p>담당 원장 · 최상위 수학 6-1</p></div><button class="secondary-button small" id="applyAllHomework">숙제 전체 완료</button></div>
-            <div class="table-scroll">
-              <table class="record-table">
-                <thead><tr><th>원생</th><th>출석</th><th>숙제</th><th>오늘 진도</th><th>수업 태도</th><th>보강</th><th>메모</th></tr></thead>
-                <tbody id="classRecordBody"></tbody>
-              </table>
-            </div>
-            <div class="record-footer"><div><span class="dot green"></span> 자동 저장 중 <small>마지막 저장 15:42</small></div><button class="primary-button" id="saveClassBottom">수업 기록 저장</button></div>
-          </article>
+          <div class="student-summary"><strong>전체 <em id="studentListCount">30</em>명</strong><span>과목 <b>영어</b></span><span>예시 데이터 사용 중</span></div>
+          <article class="panel table-panel"><div class="table-scroll"><table class="student-table"><thead><tr><th>학생</th><th>학교·학년</th><th>수업반</th><th>단어</th><th>리딩</th><th>리스닝</th><th>스피킹</th><th>최근 출결</th></tr></thead><tbody id="studentTableBody"></tbody></table></div></article>
         </section>
 
-        <section class="page" id="students-page" data-title="원생 관리" data-eyebrow="원생 정보와 학습 이력을 한곳에서 관리하세요">
-          <div class="page-toolbar">
-            <div class="filter-group"><div class="search-box">⌕ <input id="studentSearch" placeholder="이름 또는 학교 검색" /></div><select id="gradeFilter"><option value="all">전체 학년</option><option>초등 4학년</option><option>초등 5학년</option><option>초등 6학년</option><option>중등 1학년</option><option>중등 2학년</option><option>중등 3학년</option></select><select><option>재원생</option><option>휴원생</option><option>퇴원생</option></select></div>
-            <div class="toolbar-actions"><button class="secondary-button">엑셀 가져오기</button><button class="primary-button" id="openStudentModal">＋ 새 원생 등록</button></div>
+        <section class="page" id="attendance-page">
+          <div class="stats-grid compact learning-stats">
+            <article class="stat-card"><div class="stat-icon green">✓</div><div><p>오늘 출석</p><strong>27<small>명</small></strong></div></article>
+            <article class="stat-card"><div class="stat-icon orange">△</div><div><p>지각</p><strong>1<small>명</small></strong></div></article>
+            <article class="stat-card"><div class="stat-icon red">!</div><div><p>결석</p><strong>2<small>명</small></strong></div></article>
           </div>
-          <div class="student-summary"><strong>전체 <em id="studentListCount">8</em>명</strong><span>초등 <b id="elementaryCount">5</b>명</span><span>중등 <b id="middleCount">3</b>명</span></div>
-          <article class="panel table-panel"><div class="table-scroll"><table class="student-table"><thead><tr><th><input type="checkbox" /></th><th>원생</th><th>학교·학년</th><th>연락처</th><th>수업반</th><th>숙제율</th><th>최근 출석</th><th>수납</th><th>관리</th></tr></thead><tbody id="studentTableBody"></tbody></table></div></article>
+          <article class="panel table-panel"><div class="panel-head"><div><span class="section-kicker">ATTENDANCE</span><h3>오늘 출결 기록</h3></div><button class="primary-button" id="saveAttendance">출결 저장</button></div><div class="table-scroll"><table class="simple-table"><thead><tr><th>학생</th><th>학년</th><th>상태</th><th>메모</th></tr></thead><tbody id="attendanceBody"></tbody></table></div></article>
         </section>
 
-        <section class="page" id="homework-page" data-title="숙제·출석" data-eyebrow="놓치기 쉬운 학습 습관을 확인하세요">
+        <section class="page" id="learning-page">
           <div class="stats-grid compact">
-            <article class="stat-card"><div class="stat-icon green">✓</div><div><p>이번 주 출석률</p><strong>94<small>%</small></strong><span class="up">↑ 지난주 대비 2%</span></div></article>
-            <article class="stat-card"><div class="stat-icon orange">▤</div><div><p>숙제 제출률</p><strong>87<small>%</small></strong><span>전체 132건</span></div></article>
-            <article class="stat-card"><div class="stat-icon red">!</div><div><p>연속 미제출</p><strong>3<small>명</small></strong><span class="warn">상담 권장</span></div></article>
+            <article class="stat-card"><div class="stat-icon blue">W</div><div><p>단어 평균</p><strong>86<small>점</small></strong></div></article>
+            <article class="stat-card"><div class="stat-icon green">R</div><div><p>리딩 평균</p><strong>82<small>점</small></strong></div></article>
+            <article class="stat-card"><div class="stat-icon orange">L</div><div><p>리스닝 평균</p><strong>84<small>점</small></strong></div></article>
+            <article class="stat-card"><div class="stat-icon purple">S</div><div><p>스피킹 평균</p><strong>79<small>점</small></strong></div></article>
           </div>
-          <article class="panel table-panel"><div class="panel-head"><div><span class="section-kicker">WEEKLY CHECK</span><h3>이번 주 숙제 현황</h3></div><select><option>전체 반</option><option>초6 심화반</option><option>중2 A반</option></select></div><div class="table-scroll"><table class="simple-table"><thead><tr><th>원생</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>제출률</th><th>관리 메모</th></tr></thead><tbody><tr><td><b>김도윤</b><small>초6 심화반</small></td><td class="status-ok">완료</td><td>–</td><td class="status-bad">미제출</td><td>–</td><td class="status-wait">예정</td><td><strong>50%</strong></td><td>오답 재확인</td></tr><tr><td><b>이서아</b><small>초6 심화반</small></td><td class="status-ok">완료</td><td>–</td><td class="status-ok">완료</td><td>–</td><td class="status-wait">예정</td><td><strong>100%</strong></td><td>꼼꼼하게 수행</td></tr><tr><td><b>박지후</b><small>중2 A반</small></td><td class="status-bad">미제출</td><td class="status-ok">완료</td><td>–</td><td class="status-bad">일부</td><td>–</td><td><strong>33%</strong></td><td>보호자 상담 예정</td></tr></tbody></table></div></article>
+          <article class="panel table-panel"><div class="panel-head"><div><span class="section-kicker">ENGLISH PROGRESS</span><h3>영어 학습 기록</h3></div></div><div class="table-scroll"><table class="simple-table"><thead><tr><th>학생</th><th>단어</th><th>리딩</th><th>리스닝</th><th>스피킹</th><th>이번 주 학습 내용</th></tr></thead><tbody id="learningBody"></tbody></table></div></article>
         </section>
 
-        <section class="page" id="billing-page" data-title="수납 관리" data-eyebrow="월별 수강료와 미납 현황을 확인하세요">
-          <div class="page-toolbar"><div class="date-control"><button>‹</button><strong>2026년 7월</strong><button>›</button></div><div class="toolbar-actions"><button class="secondary-button">수납 내역 내보내기</button><button class="primary-button" id="billingAdd">＋ 수납 등록</button></div></div>
-          <div class="stats-grid compact"><article class="stat-card"><div class="stat-icon blue">₩</div><div><p>이번 달 청구</p><strong>6,300,000<small>원</small></strong></div></article><article class="stat-card"><div class="stat-icon green">✓</div><div><p>수납 완료</p><strong>5,880,000<small>원</small></strong><span>42명</span></div></article><article class="stat-card"><div class="stat-icon red">!</div><div><p>미납</p><strong>420,000<small>원</small></strong><span class="warn">3명</span></div></article></div>
-          <article class="panel table-panel"><div class="panel-head"><div><span class="section-kicker">JULY PAYMENT</span><h3>7월 수납 현황</h3></div><div class="search-box">⌕ <input placeholder="원생 검색" /></div></div><div class="table-scroll"><table class="simple-table"><thead><tr><th>원생</th><th>수강 과정</th><th>청구 금액</th><th>납부일</th><th>납부 방법</th><th>상태</th><th></th></tr></thead><tbody><tr><td><b>김도윤</b><small>초등 6학년</small></td><td>초6 심화반</td><td>140,000원</td><td>2026.07.02</td><td>계좌이체</td><td><span class="badge green">납부 완료</span></td><td><button class="more">···</button></td></tr><tr><td><b>이서아</b><small>초등 6학년</small></td><td>초6 심화반</td><td>140,000원</td><td>–</td><td>–</td><td><span class="badge red">미납</span></td><td><button class="small-action pay-now">수납 처리</button></td></tr><tr><td><b>박지후</b><small>중등 2학년</small></td><td>중2 A반</td><td>140,000원</td><td>–</td><td>–</td><td><span class="badge red">미납</span></td><td><button class="small-action pay-now">수납 처리</button></td></tr></tbody></table></div></article>
-        </section>
-
-        <section class="page" id="makeup-page" data-title="보강 관리" data-eyebrow="결석부터 보강 완료까지 빠짐없이 관리하세요">
-          <div class="kanban">
-            <div class="kanban-column"><div class="kanban-head"><h3>일정 미정</h3><span>2</span></div><article class="makeup-card"><div class="student-mini"><div class="mini-avatar orange-bg">이</div><div><strong>이서아</strong><small>초6 심화반</small></div></div><p><b>결석일</b> 7월 3일 (금)</p><p><b>결석 사유</b> 병원 진료</p><button class="primary-button small schedule-makeup">보강 일정 잡기</button></article><article class="makeup-card"><div class="student-mini"><div class="mini-avatar blue-bg">박</div><div><strong>박지후</strong><small>중2 A반</small></div></div><p><b>결석일</b> 7월 4일 (토)</p><p><b>결석 사유</b> 가족 일정</p><button class="primary-button small schedule-makeup">보강 일정 잡기</button></article></div>
-            <div class="kanban-column"><div class="kanban-head"><h3>보강 예정</h3><span>1</span></div><article class="makeup-card accent"><div class="student-mini"><div class="mini-avatar green-bg">최</div><div><strong>최하윤</strong><small>초4 A반</small></div></div><p><b>보강 일시</b> 7월 7일 15:00</p><p><b>보강 내용</b> 분수의 덧셈</p><button class="secondary-button small complete-makeup">보강 완료 처리</button></article></div>
-            <div class="kanban-column done-column"><div class="kanban-head"><h3>이번 달 완료</h3><span>4</span></div><article class="makeup-card muted"><div class="student-mini"><div class="mini-avatar purple-bg">정</div><div><strong>정민재</strong><small>초5 기본반</small></div></div><p><b>완료일</b> 7월 2일</p><p><b>진도</b> 약수와 배수</p><span class="badge green">완료</span></article></div>
+        <section class="page" id="counseling-page">
+          <div class="dashboard-grid">
+            <article class="panel"><div class="panel-head"><div><span class="section-kicker">COUNSELING</span><h3>상담 기록</h3></div></div><div id="counselingList"></div></article>
+            <article class="panel"><div class="panel-head"><div><span class="section-kicker orange-text">NOTICE</span><h3>학부모 안내문</h3></div></div><label class="full-label">안내 내용<textarea rows="8" placeholder="수업 일정이나 준비물 안내를 입력하세요"></textarea></label><button class="primary-button" id="noticeDraft">안내문 초안 만들기</button><p class="step-note">OpenAI API 연결은 3단계에서 진행합니다.</p></article>
           </div>
         </section>
 
-        <section class="page" id="reports-page" data-title="통계·보고서" data-eyebrow="기록이 쌓일수록 학원 운영이 선명해집니다">
-          <div class="report-top"><div><button class="period active">이번 달</button><button class="period">지난달</button><button class="period">최근 3개월</button></div><button class="secondary-button">보고서 PDF 저장</button></div>
-          <div class="dashboard-grid report-grid"><article class="panel chart-panel"><div class="panel-head"><div><span class="section-kicker">ATTENDANCE</span><h3>학년별 출석률</h3></div><strong class="chart-score">94.2%</strong></div><div class="bar-chart"><div><span>초4</span><i style="--h:84%"><b>96%</b></i></div><div><span>초5</span><i style="--h:75%"><b>93%</b></i></div><div><span>초6</span><i style="--h:90%"><b>98%</b></i></div><div><span>중1</span><i style="--h:70%"><b>91%</b></i></div><div><span>중2</span><i style="--h:78%"><b>94%</b></i></div><div><span>중3</span><i style="--h:66%"><b>89%</b></i></div></div></article><article class="panel donut-panel"><div class="panel-head"><div><span class="section-kicker orange-text">HOMEWORK</span><h3>숙제 수행 분포</h3></div></div><div class="donut-wrap"><div class="donut"><span><strong>87%</strong><small>평균 제출률</small></span></div><div class="legend"><p><i class="lg blue-bg"></i>완료 <b>87%</b></p><p><i class="lg orange-bg"></i>일부 완료 <b>8%</b></p><p><i class="lg red-bg"></i>미제출 <b>5%</b></p></div></div></article></div>
+        <section class="page" id="reports-page">
+          <div class="report-builder">
+            <article class="panel report-controls">
+              <div class="panel-head"><div><span class="section-kicker">AI REPORT</span><h3>학습보고서 만들기</h3></div></div>
+              <label>학생 선택<select id="reportStudent"></select></label>
+              <fieldset class="template-picker"><legend>보고서 양식 선택</legend>
+                <label><input type="radio" name="template" value="story" checked /><span><strong>성장 스토리</strong><small>지난달 → 이번 달 → 다음 목표</small></span></label>
+                <label><input type="radio" name="template" value="weekly" /><span><strong>주간 체크</strong><small>단어·리딩·리스닝·스피킹 변화</small></span></label>
+                <label><input type="radio" name="template" value="classic" /><span><strong>클래식 리포트</strong><small>점수 변화·학습 내용·선생님 코멘트</small></span></label>
+              </fieldset>
+              <label>선생님 메모<textarea id="teacherMemo" rows="5" placeholder="칭찬할 점과 다음 목표를 적어주세요"></textarea></label>
+              <button class="primary-button" id="generateReport">AI 보고서 생성</button>
+              <p class="step-note">현재는 화면 준비만 완료했습니다. 실제 AI 생성은 3단계에서 연결합니다.</p>
+            </article>
+            <article class="panel report-preview" id="reportPreview"><span class="section-kicker">PREVIEW</span><h2>억매방 영어 학습보고서</h2><p class="empty-preview">학생과 양식을 선택하면 보고서 미리보기가 여기에 표시됩니다.</p><div class="report-actions"><button class="secondary-button" data-export="image">이미지 저장</button><button class="secondary-button" data-export="pdf">PDF 저장</button><button class="primary-button" data-export="share">휴대폰 공유</button></div></article>
+          </div>
         </section>
 
-        <section class="page" id="settings-page" data-title="학원 설정" data-eyebrow="온수학의 기본 정보와 운영 환경을 관리하세요">
-          <div class="settings-grid"><article class="panel brand-settings"><h3>학원 기본 정보</h3><div class="logo-preview"><img src="onsuhak-logo.jpg" alt="온수학 로고" /><div><strong>온수학</strong><p>수학을 밝히는 힘</p><button class="secondary-button small">로고 변경</button></div></div><label>학원명<input value="온수학" /></label><label>대표 연락처<input placeholder="02-000-0000" /></label><label>학원 주소<input placeholder="학원 주소를 입력하세요" /></label><button class="primary-button" id="saveSettings">설정 저장</button></article><article class="panel"><h3>데이터 관리</h3><div class="setting-row"><div><strong>엑셀 원생 명단 가져오기</strong><p>기존에 관리하던 원생 정보를 한 번에 등록합니다.</p></div><button class="secondary-button">가져오기</button></div><div class="setting-row"><div><strong>전체 데이터 내려받기</strong><p>학생·수업·수납 기록을 안전하게 보관합니다.</p></div><button class="secondary-button">내려받기</button></div><div class="setting-row"><div><strong>자동 백업</strong><p>매일 밤 12시에 기록을 자동 저장합니다.</p></div><label class="switch"><input type="checkbox" checked /><span></span></label></div></article></div>
+        <section class="page" id="settings-page">
+          <div class="settings-grid"><article class="panel brand-settings"><h3>학원 기본 정보</h3><div class="logo-preview"><div class="brand-mark"><span>억</span></div><div><strong>억매방</strong><p>초등 영어의 자신감을 키우는 곳</p></div></div><label>학원명<input value="억매방" readonly /></label><label>대상<input value="초등학교 1~6학년" readonly /></label><label>과목<input value="영어" readonly /></label></article><article class="panel"><h3>데이터 안내</h3><div class="setting-row"><div><strong>현재 데이터</strong><p>데이터베이스 연결 전까지 예시 학생 30명을 사용합니다.</p></div><span class="badge blue">예시 모드</span></div><div class="setting-row"><div><strong>개인정보 보호</strong><p>실제 전화번호나 API 키는 화면 코드에 저장하지 않습니다.</p></div><span class="badge green">안전</span></div></article></div>
         </section>
       </div>
     </main>
-  </div>
-
-  <div class="modal-backdrop" id="studentModal" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="studentModalTitle">
-      <div class="modal-head"><div><span class="section-kicker" id="studentModalKicker">NEW STUDENT</span><h2 id="studentModalTitle">새 원생 등록</h2></div><button class="modal-close" aria-label="닫기">×</button></div>
-      <form id="studentForm">
-        <div class="form-grid"><label>원생 이름 *<input name="name" required placeholder="이름 입력" /></label><label>학교명 *<input name="school" required placeholder="학교 입력" /></label><label>학년 *<select name="grade" required><option value="">학년 선택</option><option>초등 4학년</option><option>초등 5학년</option><option>초등 6학년</option><option>중등 1학년</option><option>중등 2학년</option><option>중등 3학년</option></select></label><label>수업반<select name="className"><option>초4 A반</option><option>초5 기본반</option><option>초6 심화반</option><option>중1 개념반</option><option>중2 A반</option><option>중3 내신반</option><option>개별 지정</option></select></label><label>학생 연락처<input name="phone" placeholder="010-0000-0000" /></label><label>보호자 연락처<input name="parentPhone" placeholder="010-0000-0000" /></label></div>
-        <label class="full-label">특이사항<textarea name="memo" rows="3" placeholder="학습 성향이나 상담 내용을 입력하세요"></textarea></label>
-        <div class="modal-actions"><button type="button" class="secondary-button modal-cancel">취소</button><button type="submit" class="primary-button" id="studentSubmit">원생 등록하기</button></div>
-      </form>
-    </div>
-  </div>
-  <div class="modal-backdrop" id="deleteModal" aria-hidden="true">
-    <div class="modal confirm-modal" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle">
-      <div class="confirm-icon">!</div>
-      <h2 id="deleteModalTitle">원생을 삭제할까요?</h2>
-      <p><strong id="deleteStudentName"></strong> 원생의 정보가 목록에서 삭제됩니다.<br />삭제한 내용은 되돌릴 수 없습니다.</p>
-      <div class="modal-actions confirm-actions"><button type="button" class="secondary-button" id="cancelDelete">취소</button><button type="button" class="danger-button" id="confirmDelete">삭제하기</button></div>
-    </div>
   </div>
   <div class="toast" id="toast"><span>✓</span><p></p></div>
   <script src="app.js"></script>
